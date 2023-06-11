@@ -1,0 +1,71 @@
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*,
+:after,
+:before,
+legend,
+td,
+th {
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 14px;
+  color: #333;
+}
+
+body {
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.active {
+  font-weight: 500;
+  color: #7682de;
+}
