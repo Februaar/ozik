@@ -1,51 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap"
     />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Ozik</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="output.css" />
+    <title>Ozik - 오직 나를 위한 시간</title>
+    <script type="module" src="/src/main.jsx"></script>
   </head>
   <body>
-    <div id="container">
-      <header>
-        <div class="top">
-          <div class="top-bar">
-            <a href="" class="new-account active">회원가입</a>
-            <span>|</span>
-            <a href="">로그인</a>
-            <span>|</span>
-            <a href="">고객센터</a>
-          </div>
-          <div class="search-section">
-            <div class="description">
-              <img src="./assets/images/logo.png" alt="오직로고" class="logo" />
-              <button class="subscribe active">구독하기</button>
-            </div>
-            <div class="search">
-              <div class="search-bar">
-                <input
-                  id="gnb-search"
-                  placeholder="오직 나를 위해 구독해보세요"
-                  required
-                  class=""
-                />
-                <button id="submit" aria-label="submit" class=""></button>
-              </div>
-            </div>
-            <div></div>
-          </div>
-        </div>
-        <div class="header"></div>
-      </header>
-      <main></main>
-      <footer></footer>
-    </div>
+    <div id="app" class="drawer"></div>
   </body>
 </html>
