@@ -21,14 +21,13 @@ const App = () => {
       <section className="drawer-content">
         {/* <Nav /> */}
         <section className="main">
-          <h2>Ozik</h2>
-          <ProductList products={products} addToCart={addToCart} />
+          {/* <ProductList products={products} addToCart={addToCart} />
           <Cart cart={cart} />
-          <Routes>
-            {/* <Route path="*" element={<ProductList />} /> */}
-            {/* <Route path="*" element={<Product />} /> */}
-            {/* <Route path="*" element={<Cart />} /> */}
-          </Routes>
+          <Routes> */}
+          {/* <Route path="*" element={<ProductList />} /> */}
+          {/* <Route path="*" element={<Product />} /> */}
+          {/* <Route path="*" element={<Cart />} /> */}
+          {/* </Routes> */}
         </section>
         {/* <Footer /> */}
       </section>
