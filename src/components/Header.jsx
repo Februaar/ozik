@@ -50,38 +50,82 @@ const Header = () => {
           </div>
           {/* 장바구니 연결 */}
           <div className="relative w-[1050px] mx-auto">
-            <div className="absolute flex top-[-49px] right-[-6px]">
-              <button className="w-[36px] h-[36px]" aria-label="구매내역">
-                <img src="./images/calendar.svg" alt="box-img" className="" />
+            <div className="absolute flex items-center justify-center top-[-49px] right-[0px]">
+              <button
+                className="w-[36px] h-[36px] mr-[15px]"
+                aria-label="구매내역"
+              >
+                <img
+                  src="./images/calendar.svg"
+                  alt="box-img"
+                  className="w-[22px] h-[22px] mx-auto"
+                />
               </button>
-              <button className="w-[36px] h-[36px] " aria-label="구독하기">
-                <img src="./images/subscribe.svg" alt="box-img" className="" />
+              <button
+                className="w-[36px] h-[36px] mx-[5px]"
+                aria-label="구독하기"
+              >
+                <img
+                  src="./images/subscribe.svg"
+                  alt="box-img"
+                  className="w-[22px] h-[22px] mx-auto"
+                />
               </button>
-              <button className="w-[36px] h-[36px]" aria-label="회원정보">
-                <img src="./images/person.svg" alt="box-img" className="" />
+              <button
+                className="w-[36px] h-[36px] ml-[15px]"
+                aria-label="회원정보"
+              >
+                <img
+                  src="./images/person.svg"
+                  alt="box-img"
+                  className="w-[22px] h-[22px] mx-auto"
+                />
               </button>
             </div>
           </div>
         </div>
       </div>
       {/* 카테코리 영역 */}
-      <div className="relative min-w-[1050px] w-full z-10 tracking-tight bg-white shadow-md">
+      <div className="relative min-w-[1050px] w-full z-10 tracking-tight bg-white">
         <div className="relative flex justify-between w-[1050px] h-[56px] mx-auto">
           {/* 카테고리 Nav */}
           <div>
             <div className="flex items-center h-full">
-              <span className="w-[16px] h-[14px] mr-[14px]">
-                <img src="/images/category.svg" alt="category.img" />
+              <span className="w-[22px] h-[22px] mr-[14px]">
+                <img
+                  src="/images/category.svg"
+                  alt="category.img"
+                  className="w-full mx-auto"
+                />
               </span>
-              <span></span>
+              <span className="font-medium tracking-tighter text-gray-700 text-lg">
+                카테고리
+                {/* mouseover하면 카테고리 div 태그 생성 */}
+              </span>
             </div>
           </div>
           {/* 키워드별 추천 Nav */}
-          <ul>
-            <li>신상품</li>
-            <li>베스트</li>
-            <li>알뜰쇼핑</li>
-            <li>특가/할인</li>
+          <ul className="flex ml-[-100px]">
+            <li className="flex justify-center w-[150px] h-[55px] pt-[18px] leading-5 text-center">
+              <span className="h-fit-content text-lg font-medium text-gray-700 cursor-pointer">
+                신상품
+              </span>
+            </li>
+            <li className="flex justify-center w-[150px] h-[55px] pt-[18px] leading-5 text-center">
+              <span className="h-fit-content text-lg font-medium text-gray-700 cursor-pointer">
+                베스트
+              </span>
+            </li>
+            <li className="flex justify-center w-[150px] h-[55px] pt-[18px] leading-5 text-center">
+              <span className="h-fit-content text-lg font-medium text-gray-700 cursor-pointer">
+                알뜰쇼핑
+              </span>
+            </li>
+            <li className="flex justify-center w-[150px] h-[55px] pt-[18px] leading-5 text-center">
+              <span className="h-fit-content text-lg font-medium text-gray-700 cursor-pointer">
+                특가/혜택
+              </span>
+            </li>
           </ul>
           <div></div>
         </div>
