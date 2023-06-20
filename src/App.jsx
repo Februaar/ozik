@@ -2,18 +2,19 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import ProductList from "./components/ProductList";
-import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+// import ProductList from "./components/ProductList";
+// import Cart from "./components/Cart";
 
 import "./App.css";
 
 const App = () => {
-  const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  // const [products, setProducts] = useState([]);
+  // const [cart, setCart] = useState([]);
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
+  // const addToCart = (product) => {
+  //   setCart([...cart, product]);
+  // };
 
   return (
     <BrowserRouter>
@@ -29,7 +30,7 @@ const App = () => {
           {/* <Route path="*" element={<Cart />} /> */}
           {/* </Routes> */}
         </section>
-        {/* <Footer /> */}
+        <Footer />
       </section>
     </BrowserRouter>
   );
