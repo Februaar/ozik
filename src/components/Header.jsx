@@ -9,10 +9,10 @@ const Header = () => {
           <a href="" className="active">
             회원가입
           </a>
-          <div className="w-0.5 h-4 mr-2 ml-2 bg-gray-400"></div>
+          <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
           {/* <span className="ml-2 mr-2">|</span> */}
           <a href="">로그인</a>
-          <div className="w-0.5 h-4 mr-2 ml-2 bg-gray-400"></div>
+          <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
           {/* <span className="ml-2 mr-2">|</span> */}
           <a href="">고객센터</a>
         </div>
@@ -41,7 +41,7 @@ const Header = () => {
                 className="relative w-[30px] h-[30px] m-[10px] text-base flex items-center justify-center"
               >
                 <img
-                  src="./src/assets/search.svg"
+                  src="./images/search.svg"
                   alt="search-img"
                   className="w-[full] h-[full]"
                 />
@@ -49,29 +49,40 @@ const Header = () => {
             </div>
           </div>
           {/* 장바구니 연결 */}
-          <div className="relative">
-            <div>
-              <div className="w-[36px] h-[36px] mr-[20px]"></div>
-              <button
-                className="w-[36px] h-[36px]"
-                aria-label="찜하기"
-              ></button>
-              <div
-                className="w-[36px] h-[36px] bg-cover bg-center"
-                style={{ backgroundImage: "url(/images/box.svg)" }}
-              ></div>
+          <div className="relative w-[1050px] mx-auto">
+            <div className="absolute flex top-[-49px] right-[-6px]">
+              <button className="w-[36px] h-[36px]" aria-label="구매내역">
+                <img src="./images/calendar.svg" alt="box-img" className="" />
+              </button>
+              <button className="w-[36px] h-[36px] " aria-label="구독하기">
+                <img src="./images/subscribe.svg" alt="box-img" className="" />
+              </button>
+              <button className="w-[36px] h-[36px]" aria-label="회원정보">
+                <img src="./images/person.svg" alt="box-img" className="" />
+              </button>
             </div>
           </div>
         </div>
       </div>
       {/* 카테코리 영역 */}
-      <div className="min-w-[1050px] tracking-tight bg-white relative shadow-md w-full z-10">
+      <div className="relative min-w-[1050px] w-full z-10 tracking-tight bg-white shadow-md">
         <div className="relative flex justify-between w-[1050px] h-[56px] mx-auto">
           {/* 카테고리 Nav */}
-          <div></div>
+          <div>
+            <div className="flex items-center h-full">
+              <span className="w-[16px] h-[14px] mr-[14px]">
+                <img src="/images/category.svg" alt="category.img" />
+              </span>
+              <span></span>
+            </div>
+          </div>
           {/* 키워드별 추천 Nav */}
-          <ul></ul>
-
+          <ul>
+            <li>신상품</li>
+            <li>베스트</li>
+            <li>알뜰쇼핑</li>
+            <li>특가/할인</li>
+          </ul>
           <div></div>
         </div>
       </div>
