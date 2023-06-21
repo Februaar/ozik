@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     // Header 전체
@@ -6,15 +8,11 @@ const Header = () => {
       <div className="relative w-[1050px] h-[100px] mx-auto">
         {/* 회원가입 영역 */}
         <div className="absolute top-2 right-0 z-20 flex items-center text-sm">
-          <a href="" className="active">
-            회원가입
-          </a>
+          <Link to="/signup">회원가입</Link>
           <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
-          {/* <span className="ml-2 mr-2">|</span> */}
-          <a href="">로그인</a>
+          <Link to="/login">로그인</Link>
           <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
-          {/* <span className="ml-2 mr-2">|</span> */}
-          <a href="">고객센터</a>
+          <Link to="/customer-service">고객센터</Link>
         </div>
 
         {/* 검색 바 영역 */}
@@ -28,12 +26,12 @@ const Header = () => {
           </div>
           {/* 검색 바 */}
           <div className="relative w-[1050px] mx-auto">
-            <div className="absolute flex items-center justify-between left-[325px] top-[-55px] w-[400px] h-[48px] pl-14 border-1 border-solid border-blue-600 rounded-md bg-white shadow-inner">
+            <div className="flex items-center justify-between absolute left-[325px] top-[-55px] w-[400px] h-[45px] pl-14 border border-blue-600 rounded-md bg-white shadow-md">
               <input
                 id="gnb-search"
                 placeholder="오직 나를 위해 구독해보세요"
                 required
-                className="w-[300px] bg-transparent border-none outline-none tracking-tighter text-lg"
+                className="w-300 bg-transparent border-none outline-none text-base tracking-tighter"
               />
               <button
                 id="submit"
@@ -100,7 +98,6 @@ const Header = () => {
               </span>
               <span className="font-medium tracking-tighter text-gray-700 text-lg">
                 카테고리
-                {/* mouseover하면 카테고리 div 태그 생성 */}
               </span>
             </div>
           </div>
@@ -130,6 +127,7 @@ const Header = () => {
           <div></div>
         </div>
       </div>
+      {/* <Slider /> */}
     </header>
   );
 };
