@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/components/Header.jsx", "./src/components/Footer.jsx"],
+  content: [
+    "./src/components/Header.jsx",
+    "./src/components/Footer.jsx",
+    "./src/components/LoginPage.jsx",
+  ],
   theme: {
     extend: {
       fontSize: {
