@@ -75,20 +75,36 @@ button {
   appearance: none;
   -webkit-appearance: none;
   border-radius: 0;
-  border: none;
-  padding: 10px 8px;
+  padding: 0;
+  border: 0;
+  outline: none;
   margin: 0;
   font-size: 0.5em;
   font-weight: 500;
   font-family: inherit;
+  background: none;
   background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+
+input,
+textarea {
+  padding: 0;
+  outline: 0;
+  resize: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+}
+input:focus {
+  outline: none;
+}
+
+/* button:hover {
   color: #646cff;
   font-weight: 600;
-}
+} */
 /* button:focus,
 button:focus-visible {
   outline: 2px auto -webkit-focus-ring-color;
