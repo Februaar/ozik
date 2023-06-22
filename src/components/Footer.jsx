@@ -16,7 +16,7 @@ const Footer = () => {
               </strong>
               <div className="flex flex-col">
                 <div className="flex flex-row">
-                  <button className="block w-[140px] h-[40px] border-[1px] border-gray-300 bg-gray-100 rounded-xl leading-[39px] text-center mr-[16px] mb-[16px]">
+                  <button className="block w-[140px] h-[40px] border-[1px] border-gray-300 rounded-xl leading-[39px] text-center mr-[16px] mb-[16px]">
                     카카오톡 문의
                   </button>
                   <div className="mt-[2px] text-gray-500 tracking-tighter leading-4">
@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <div className="flex flex-row">
-                    <button className="block w-[140px] h-[40px] border-[1px] border-gray-300 bg-gray-100 rounded-xl leading-[39px] text-center mr-[16px] mb-[16px]">
+                    <button className="block w-[140px] h-[40px] border-[1px] border-gray-300 rounded-xl leading-[39px] text-center mr-[16px] mb-[16px]">
                       1:1 문의
                     </button>
                     <div className="mt-[2px] text-gray-500 tracking-tighter leading-4">
