@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SignIn from "../components/SignIn";
 
 const Header = () => {
   return (
@@ -8,7 +9,8 @@ const Header = () => {
       <div className="relative w-[1050px] h-[100px] mx-auto">
         {/* 회원가입 영역 */}
         <div className="absolute top-2 right-0 z-20 flex items-center text-sm">
-          <Link to="/signup">회원가입</Link>
+          {/* <Link to="/signup">회원가입</Link> */}
+          <SignIn />
           <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
           <Link to="/login">로그인</Link>
           <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
