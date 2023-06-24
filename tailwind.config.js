@@ -4,6 +4,9 @@ export default {
     "./src/components/Header.jsx",
     "./src/components/Footer.jsx",
     "./src/components/LoginPage.jsx",
+    "./src/components/EmailInput.jsx",
+    "./src/components/PasswordInput.jsx",
+    "./src/components/SocialLogin.jsx",
   ],
   theme: {
     extend: {
