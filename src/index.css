@@ -14,6 +14,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+#app {
+  min-width: 80%;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 html,
 button,
 input,
@@ -21,12 +29,14 @@ select,
 textarea {
   font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
 }
+
 *,
 :after,
 :before {
   box-sizing: border-box;
   margin: 0;
 }
+
 *,
 :after,
 :before,
@@ -35,6 +45,7 @@ td,
 th {
   padding: 0;
 }
+
 body,
 button,
 input,
@@ -43,20 +54,25 @@ textarea {
   font-size: 14px;
   color: #333;
 }
+
 div {
   display: block;
 }
+
 a {
   font-weight: 500;
   color: #333;
   text-decoration: none;
 }
+
 a:hover {
   color: #646cff;
 }
+
 li {
   list-style: none;
 }
+
 body {
   margin: 0;
   -webkit-touch-callout: none;
@@ -67,10 +83,12 @@ body {
   background-color: #fff;
   -webkit-tap-highlight-color: transparent;
 }
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
 button {
   appearance: none;
   -webkit-appearance: none;
@@ -97,18 +115,6 @@ textarea {
   -webkit-appearance: none;
   background-color: transparent;
 }
-input:focus {
-  outline: none;
-}
-
-/* button:hover {
-  color: #646cff;
-  font-weight: 600;
-} */
-/* button:focus,
-button:focus-visible {
-  outline: 2px auto -webkit-focus-ring-color;
-} */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -121,8 +127,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-.active {
-  font-weight: 500;
-  color: #646cff;
 }
