@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import Slider from "../components/Slider";
 
 const Header = () => {
   return (
