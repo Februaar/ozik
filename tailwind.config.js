@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
+    "./src/App.jsx",
     "./src/components/Header.jsx",
     "./src/components/Footer.jsx",
-    "./src/components/LoginPage.jsx",
-    "./src/components/EmailInput.jsx",
-    "./src/components/PasswordInput.jsx",
+    "./src/components/Main.jsx",
+    "./src/components/Login.jsx",
+    "./src/components/Signup.jsx",
+    "./src/components/Email.jsx",
+    "./src/components/Password.jsx",
     "./src/components/SocialLogin.jsx",
   ],
   theme: {
