@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
+import Main from "./components/Main";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -11,10 +12,10 @@ const App = () => {
       <Header />
       <Routes>
         {/* <Route path="*" element={<Error />} /> */}
-        {/* <Route Path="/main" element={<Main />} /> */}
+        <Route path="/main" element={<Main />} />
         {/* <Route path="/" element={<Index />} /> */}
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         {/* <Route path="/product/:id" element={<Products />} /> */}
         {/* <Route path="/cart" element={<Cart />} /> */}
       </Routes>
