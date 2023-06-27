@@ -1,0 +1,128 @@
+:root {
+  font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+}
+*,
+:after,
+:before,
+legend,
+td,
+th {
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 14px;
+  color: #333;
+}
+div {
+  display: block;
+}
+a {
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #646cff;
+}
+li {
+  list-style: none;
+}
+body {
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+button {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  margin: 0;
+  font-size: 0.5em;
+  font-weight: 500;
+  font-family: inherit;
+  background: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+input,
+textarea {
+  padding: 0;
+  outline: 0;
+  resize: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+}
+/* input:focus {
+  outline: none;
+} */
+
+/* button:hover {
+  color: #646cff;
+  font-weight: 600;
+} */
+/* button:focus,
+button:focus-visible {
+  outline: 2px auto -webkit-focus-ring-color;
+} */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.active {
+  font-weight: 500;
+  color: #646cff;
+}
