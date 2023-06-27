@@ -116,6 +116,38 @@ textarea {
   background-color: transparent;
 }
 
+/* 체크박스를 보이게 설정 */
+input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+}
+
+/* 체크박스 커스텀 스타일 적용 */
+input[type="checkbox"] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 3px;
+  background-color: #fff;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 체크된 상태 스타일 */
+input[type="checkbox"]:checked::before {
+  font-size: 12px;
+  color: #333;
+  background-color: #fff;
+}
+
+/* 체크박스와 라벨 간 여백 조정 */
+input[type="checkbox"] + label {
+  margin-left: 8px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
