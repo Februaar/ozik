@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Index from "./components/Index";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Footer from "./components/Footer";
@@ -12,8 +12,7 @@ const App = () => {
       <Header />
       <Routes>
         {/* <Route path="*" element={<Error />} /> */}
-        <Route path="/main" element={<Main />} />
-        {/* <Route path="/" element={<Index />} /> */}
+        <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         {/* <Route path="/product/:id" element={<Products />} /> */}
