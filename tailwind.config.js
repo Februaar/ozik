@@ -10,6 +10,7 @@ export default {
     "./src/components/Email.jsx",
     "./src/components/Password.jsx",
     "./src/components/SocialLogin.jsx",
+    "./src/components/Slider.jsx",
   ],
   theme: {
     extend: {
