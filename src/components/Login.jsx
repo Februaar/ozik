@@ -1,11 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
-import { auth } from "../firebase-config";
+import { signInWithEmailAndPassword, firebaseAuth } from "../firebase-config";
 import Email from "./Email";
 import Password from "./Password";
 import SocialLogin from "./SocialLogin";
@@ -13,7 +8,10 @@ import SocialLogin from "./SocialLogin";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isFormValid, setIsFormValid] = useState(false); // 폼의 유효성 상태
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [isAppropriate, setIsAppropriate] = useState(true);
+  const [user, setUser] = useState("");
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   const navigate = useNavigate();
 
@@ -26,7 +24,6 @@ const Login = () => {
   };
 
   const validateForm = () => {
-    // 이메일과 패스워드의 유효성을 검사하여 폼의 유효성 상태를 업데이트
     setIsFormValid(validateEmail(email) && validatePassword(password));
   };
 
@@ -48,27 +45,34 @@ const Login = () => {
     return regex.test(inputValue);
   };
 
-  const handleLogin = async () => {
-    if (isFormValid) {
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        navigate("/main");
-      } catch (error) {
-        console.log(error);
-      }
-      y;
+  const login = async () => {
+    try {
+      const curUserInfo = await signInWithEmailAndPassword(
+        firebaseAuth,
+        email,
+        password
+      );
+      setUser(curUserInfo.user);
+      setIsAppropriate(true);
+      navigate("/");
+    } catch (err) {
+      setIsAppropriate(false);
+      console.log(err.code);
     }
   };
 
-  const handleGoogleLogin = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-      navigate("/main");
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    let timer;
+    if (!isAppropriate) {
+      setShowErrorMessage(true);
+      timer = setTimeout(() => {
+        setShowErrorMessage(false);
+      }, 5000);
     }
-  };
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [isAppropriate]);
 
   return (
     <div className="min-w-screen-lg w-[400px] pt-[60px] pb-[160px] mx-auto">
@@ -81,19 +85,19 @@ const Login = () => {
       <Email
         email={email}
         handleInput={handleEmailChange}
-        validateForm={validateForm} // validateForm 함수 전달
+        validateForm={validateForm}
       />
       <Password
         password={password}
         handleInput={handlePasswordChange}
-        validateForm={validateForm} // validateForm 함수 전달
+        validateForm={validateForm}
       />
       <div className="w-[340px] tracking-tighter mx-auto">
         <button
           type="submit"
           value="Submit Form"
-          disabled={!isFormValid} // 폼이 유효하지 않을 경우 버튼 비활성화
-          onClick={handleGoogleLogin}
+          disabled={!isFormValid}
+          onClick={login}
           className={`block px-10 text-center overflow-hidden w-full h-14 rounded-md text-white ${
             isFormValid ? "bg-black" : "bg-gray-300"
           }`}
@@ -101,7 +105,21 @@ const Login = () => {
           <span>로그인</span>
         </button>
       </div>
-      {/* 아이디/비밀번호 정보 관리 */}
+      {showErrorMessage && (
+        <div className="absolute top-[15px] w-[330px] h-12 rounded-xl bg-black bg-opacity-40 text-white text-center mx-auto flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-check-lg mr-[15px]"
+            viewBox="0 0 16 16"
+          >
+            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+          </svg>
+          <p>이메일 또는 비밀번호를 확인해주세요</p>
+        </div>
+      )}
       <ul className="flex justify-evenly text-[13px] mt-[10px]">
         <li>
           <a href="/signup">이메일 가입</a>
