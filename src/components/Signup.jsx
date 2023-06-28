@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase-config";
+import {
+  createUserWithEmailAndPassword,
+  firebaseAuth,
+} from "../firebase-config";
 import Email from "./Email";
 import Password from "./Password";
 
 const Signup = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const [householdType, setHouseholdType] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [isAgeChecked, setIsAgeChecked] = useState(false);
@@ -14,11 +18,11 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+    setRegisterEmail(event.target.value);
   };
 
   const handlePasswordChange = (value) => {
-    setPassword(value);
+    setRegisterPassword(value);
   };
 
   const handleHouseholdTypeChange = (event) => {
@@ -30,8 +34,10 @@ const Signup = () => {
   };
 
   useEffect(() => {
-    setIsButtonDisabled(!email || !password || !householdType || !isAgeChecked);
-  }, [email, password, householdType, isAgeChecked]);
+    setIsButtonDisabled(
+      !registerEmail || !registerPassword || !householdType || !isAgeChecked
+    );
+  }, [registerEmail, registerPassword, householdType, isAgeChecked]);
 
   const validateEmail = (inputValue) => {
     // 이메일 유효성 검사 로직
@@ -53,26 +59,40 @@ const Signup = () => {
 
   const validateForm = () => {
     // 폼의 유효성 검사
-    const isEmailValid = validateEmail(email);
-    const isPasswordValid = validatePassword(password);
+    const isEmailValid = validateEmail(registerEmail);
+    const isPasswordValid = validatePassword(registerPassword);
     setIsButtonDisabled(
       !isEmailValid || !isPasswordValid || !householdType || !isAgeChecked
     );
   };
 
-  const handleSignUp = async () => {
+  const register = async () => {
     try {
-      // Firebase 회원가입
-      const userCredential = await auth.createUserWithEmailAndPassword(
-        email,
-        password
+      setErrorMsg("");
+      const createdUser = await createUserWithEmailAndPassword(
+        firebaseAuth,
+        registerEmail,
+        registerPassword
       );
-
-      // 회원가입 성공 시, 로그인 페이지로 이동
-      history.push("/main");
-    } catch (error) {
-      // 회원가입 실패 시, 에러 처리
-      console.log(error);
+      console.log(createdUser);
+      setRegisterEmail("");
+      setRegisterPassword("");
+      navigate("/"); // 회원가입 성공 시, 로그인 페이지로 이동
+    } catch (err) {
+      switch (err.code) {
+        case "auth/weak-password":
+          setErrorMsg("비밀번호는 6자리 이상이어야 합니다");
+          break;
+        case "auth/invalid-email":
+          setErrorMsg("잘못된 이메일 주소입니다");
+          break;
+        case "auth/email-already-in-use":
+          setErrorMsg("이미 가입되어 있는 계정입니다");
+          break;
+        default:
+          setErrorMsg("회원가입에 실패했습니다");
+          break;
+      }
     }
   };
 
@@ -82,12 +102,12 @@ const Signup = () => {
         회원가입
       </div>
       <Email
-        email={email}
+        email={registerEmail}
         handleInput={handleEmailChange}
         validateForm={validateForm}
       />
       <Password
-        password={password}
+        password={registerPassword}
         handleInput={handlePasswordChange}
         validateForm={validateForm}
       />
@@ -133,6 +153,7 @@ const Signup = () => {
           </label>
         </div>
       </div>
+      <div className="text-red-500">{errorMsg}</div>
       <button
         type="submit"
         value="Submit Form"
@@ -140,7 +161,7 @@ const Signup = () => {
           isButtonDisabled ? "bg-gray-300" : "bg-black"
         }`}
         disabled={isButtonDisabled}
-        onClick={handleSignUp}
+        onClick={register}
       >
         <span>가입하기</span>
       </button>
