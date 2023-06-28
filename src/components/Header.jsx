@@ -1,6 +1,13 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout();
+  };
   return (
     // Header 전체
     <header>
@@ -8,18 +15,28 @@ const Header = () => {
       <div className="relative w-[1050px] h-[100px] mx-auto">
         {/* 회원가입 영역 */}
         <div className="absolute top-2 right-0 z-20 flex items-center text-sm">
-          <Link to="/login">로그인</Link>
-          <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
-          <Link to="/customer-service">고객센터</Link>
+          {user ? (
+            <>
+              <button onClick={handleLogout}>로그아웃</button>
+              <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
+              <Link to="/customer-service">고객센터</Link>
+            </>
+          ) : (
+            <>
+              <Link to="/login">로그인</Link>
+              <div className="w-[0.5px] h-[15px] mr-2 ml-2 bg-gray-400"></div>
+              <Link to="/customer-service">고객센터</Link>
+            </>
+          )}
         </div>
 
         {/* 검색 바 영역 */}
-        <div className="h-[100px] pt-[36px] items-center">
+        <div className="absolute h-[100px] pt-[36px] items-center mx-auto">
           {/* 로고 홈 버튼 */}
           <div className="h-[63px] flex items-center">
             <img src="/images/logo.png" alt="오직로고" className="w-8 h-9" />
-            <button className="font-normal text-mainBlue ml-5 w-25 h-15 text-lg">
-              구독하기
+            <button className="font-semibold text-blue-600 ml-5 w-25 h-15 text-xl">
+              OZIK
             </button>
           </div>
           {/* 검색 바 */}
@@ -69,7 +86,7 @@ const Header = () => {
               </button>
               <button
                 className="w-[36px] h-[36px] ml-[15px]"
-                aria-label="회원정보"
+                aria-label="마이페이지"
               >
                 <img
                   src="./images/person.svg"
