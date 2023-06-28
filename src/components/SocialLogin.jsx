@@ -1,4 +1,4 @@
-import { auth } from "../firebase-config";
+import { firebaseAuth } from "../firebase-config";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const SocialLogin = () => {
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithPopup(firebaseAuth, provider);
       navigateToMainPage();
     } catch (error) {
       console.log(error);
@@ -16,7 +16,7 @@ const SocialLogin = () => {
   };
 
   const navigateToMainPage = () => {
-    navigate("/main"); // 메인 페이지의 원하는 URL로 대체하세요
+    navigate("/"); // 메인 페이지의 원하는 URL로 대체하세요
   };
 
   return (
