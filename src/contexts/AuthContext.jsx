@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { firebaseAuth } from "../firebase-config";
 
 export const AuthContext = createContext();
 
@@ -10,7 +11,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    setUser(null);
+    firebaseAuth
+      .signOut()
+      .then(() => {
+        setUser(null);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log("로그아웃 오류:", error);
+      });
   };
 
   return (
