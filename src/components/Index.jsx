@@ -1,7 +1,7 @@
 import Slider from "./Slider";
 
 const Index = () => {
-  return <Slider />;
+  // return <Slider />;
 };
 
 export default Index;
