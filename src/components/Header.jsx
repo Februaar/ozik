@@ -2,9 +2,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
-import CategoryList from "../components/CategoryList";
-import Slider from "../components/Slider";
-
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
 
@@ -15,7 +12,7 @@ const Header = () => {
 
   return (
     <header>
-      <div data-v-1d0b532e data-v-33d79d7a className="header fixed">
+      <div data-v-1d0b532e data-v-33d79d7a className="header">
         {/* header_top */}
         <div data-v-33d79d7a className="header_top">
           <div data-v-33d79d7a className="top_inner flex">
@@ -130,9 +127,7 @@ const Header = () => {
             </button> */}
           </div>
         </div>
-        <CategoryList />
       </div>
-      {/* <Slider /> */}
     </header>
   );
 };
