@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      {/* contents 영역 */}
       <div className="footer lg" data-v-1fddaed6 data-v-1d0b532e>
         <div className="inner" data-v-1fddaed6>
           <div className="service_area" data-v-1fddaed6>
@@ -11,7 +10,7 @@ const Footer = () => {
               <strong className="service_title" data-v-1fddaed6>
                 고객센터
                 <Link
-                  to="customer-service"
+                  to="/customer-service"
                   className="service_tel"
                   data-v-1fddaed6
                 >
@@ -45,11 +44,39 @@ const Footer = () => {
                 <strong className="menu_title" data-v-1fddaed6>
                   이용안내
                 </strong>
+                <ul className="menu_list" data-v-1fddaed6>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">검사기준</Link>
+                  </li>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">이용정책</Link>
+                  </li>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">패널티 정책</Link>
+                  </li>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">커뮤니티 가이드라인</Link>
+                  </li>
+                </ul>
               </div>
               <div className="menu_box" data-v-1fddaed6>
                 <strong className="menu_title" data-v-1fddaed6>
                   고객지원
                 </strong>
+                <ul className="menu_list" data-v-1fddaed6>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">공지사항</Link>
+                  </li>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">서비스 소개</Link>
+                  </li>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">스토어 안내</Link>
+                  </li>
+                  <li className="menu_item" data-v-1fddaed6>
+                    <Link className="menu_link">판매자 방문접수</Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -72,47 +99,3 @@ const Footer = () => {
   );
 };
 export default Footer;
-
-// <footer className="min-h-[1px] pt-[40px]">
-//   <div className="pt-[30px]">
-//     <div id="footer" className="w-[1050px] mx-auto">
-//       <div className="flex pb-[30px] justify-between overflow-hidden">
-//         <div>
-//           <h2 className="pb-[17px] font-bold leading-7 text-lg">
-//             고객만족센터
-//           </h2>
-//         <strong className="block pb-[20px] text-[28px] leading-[40px]">
-//             1644-0227
-//             <span className="ml-[8px] text-normal text-lg">
-//               월~토요일 오전 9시 - 오후 6시
-//             </span>
-//           </strong>
-//           <div className="flex flex-col">
-//             <div className="flex flex-row">
-//               <button className="w-[140px] h-[40px] mr-[16px] mb-[16px] border-[1px] border-gray-300 rounded-xl leading-[39px] text-center">
-//                 카카오톡 문의
-//               </button>
-//               <div className="mt-[2px] text-gray-500 tracking-tighter leading-4">
-//                 월~토요일 | 오전 9시 - 오후 6시
-//                 <br />
-//                 일/공휴일 | 오전 9시 - 오후 6시
-//               </div>
-//             </div>
-//             <div>
-//               <div className="flex flex-row">
-//                 <button className="w-[140px] h-[40px] border-[1px] border-gray-300 rounded-xl leading-[39px] text-center mr-[16px] mb-[16px]">
-//                   1:1 문의
-//                 </button>
-//                 <div className="mt-[2px] text-gray-500 tracking-tighter leading-4">
-//                   365일
-//                   <br />
-//                   고객센터 운영시간에 순차적으로 답변드리겠습니다.
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//         </div>
-//       </div>
-//     </div>
-//   </footer>
