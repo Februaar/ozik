@@ -5,19 +5,19 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Slider = () => {
   const items = [
     {
-      name: "Coffee",
-      title: "물빠진 청바지!",
-      text: "이제 막 도착한 패션 청바지를 구경해 보세요.",
+      name: "coffee",
+      title: "illy 커피",
+      text: "이제 집에서도 즐기세요",
     },
     {
-      name: "Coffee",
-      title: "신속한 업무처리!",
-      text: "다양한 디지털 상품을 둘러보세요.",
+      name: "snack",
+      title: "사무실 간식 꾸러미",
+      text: "매달 새로운 간식을 맛보세요",
     },
     {
-      name: "Coffee",
-      title: "신선한 식품!",
-      text: "농장 직배송으로 더욱 신선한 식료품을 만나보세요.",
+      name: "vegetable",
+      title: "무농약 채소",
+      text: "아이들에게는 신선한 채소를 소개해보세요",
     },
   ];
 
@@ -28,17 +28,20 @@ const Slider = () => {
       interval={6000}
       showStatus={false}
       infiniteLoop={true}
-      className="carousel"
+      className="carousel-container"
     >
       {items.map((item, index) => (
         <div key={item.name} className="carousel-slide">
-          <div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 text-left w-full lg:container px-4 md:px-10">
+          <div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 w-full lg:container px-4 md:px-10 text-left ">
             <h2 className="text-2xl lg:text-4xl font-bold text-white">
               {item.title}
             </h2>
             <p className="my-2 text-white">{item.text}</p>
-            <Link to={`/${item.name}`} className="btn btn-sm lg:btn-md mt-3">
-              바로가기
+            <Link
+              to={`/${item.name}`}
+              className="inline-flex items-center rounded-md btn btn-sm lg:btn-md mt-3 bg-black text-white py-2 px-3"
+            >
+              지금 구독하기
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-1"
@@ -53,7 +56,6 @@ const Slider = () => {
               </svg>
             </Link>
           </div>
-          {/* <img src={`/img_shop_${item.name}.jpeg`} alt={item.name} /> */}
           <img src={`/src/assets/images/${item.name}.jpg`} alt={item.name} />
         </div>
       ))}
