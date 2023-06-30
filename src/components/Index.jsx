@@ -5,8 +5,7 @@ import Slider from "../components/Slider";
 import Category from "../components/Category";
 import ProductList from "../components/ProductList";
 
-// 메인페이지에 렌더링되는
-// 카테고리별 상품 목록
+// 메인페이지
 const Index = () => {
   const navigate = useNavigate();
 
