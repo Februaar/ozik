@@ -1,12 +1,14 @@
 import { useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Slider from "../components/Slider";
-import CategoryList from "../components/CategoryList";
-import Contents from "../components/Contents";
+import Category from "../components/Category";
+import ProductList from "../components/ProductList";
 
+// 메인페이지에 렌더링되는
+// 카테고리별 상품 목록
 const Index = () => {
-  const { category } = useParams();
+  const navigate = useNavigate();
 
   const categoryRefs = {
     recommendation: useRef(null),
@@ -26,9 +28,13 @@ const Index = () => {
     }
   };
 
+  const handleProductClick = (productId, link) => {
+    navigate(link);
+  };
+
   return (
     <div>
-      <CategoryList scrollToCategory={scrollToCategory} />
+      <Category scrollToCategory={scrollToCategory} />
       <Slider />
       <div ref={categoryRefs.recommendation}>
         <div className="product_title lg" data-v-a60468d2>
@@ -42,7 +48,10 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <Contents category="recommendation" />
+      <ProductList
+        category="recommendation"
+        onProductClick={handleProductClick}
+      />
       <div ref={categoryRefs.new}>
         <div className="product_title lg" data-v-a60468d2>
           <div data-v-a60468d2>
@@ -55,7 +64,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <Contents category="new" />
+      <ProductList category="new" onProductClick={handleProductClick} />
       <div ref={categoryRefs.best}>
         <div className="product_title lg" data-v-a60468d2>
           <div data-v-a60468d2>
@@ -68,7 +77,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <Contents category="best" />
+      <ProductList category="best" onProductClick={handleProductClick} />
       <div ref={categoryRefs.special}>
         <div className="product_title lg" data-v-a60468d2>
           <div data-v-a60468d2>
@@ -81,7 +90,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <Contents category="special" />
+      <ProductList category="special" onProductClick={handleProductClick} />
     </div>
   );
 };
