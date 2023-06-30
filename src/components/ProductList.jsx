@@ -1,44 +1,74 @@
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const ProductList = ({ addToCart }) => {
+// 메인페이지에서 렌더링 되는 카테고리별 상품 목록
+const ProductList = ({ category }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    const dataUrl = `/src/data/${category}.json`;
 
-  const fetchProducts = async () => {
-    try {
-      const response = await fetch("src/data/products.json");
-      const data = await response.json();
-      setProducts(data);
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
-  };
-
-  if (products.length === 0) {
-    return <div>Loading...</div>;
-  }
+    fetch(dataUrl)
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  }, [category]);
 
   return (
-    <div>
-      <h2>상품 목록</h2>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - {product.price}원
-            <button onClick={() => addToCart(product)}>장바구니에 담기</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="home_products">
+        <div className="product_list_wrap lg" data-v-7681b766>
+          <div
+            className="product_list list_first horizontal_product_colletction"
+            data-v-7681b766
+          >
+            {products.map((product) => (
+              <div
+                className="product_item"
+                key={product.id}
+                data-v-34d98ac3
+                data-v-7681b766
+              >
+                <Link to={product.link} className="item_inner" data-v-34d98ac3>
+                  <div className="thumb_box" data-v-34d98ac3>
+                    <div
+                      className="product"
+                      style={{ backgroundColor: "#f4f4f4" }}
+                      data-v-4309a8a2
+                      data-v-34d98ac3
+                    >
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="picture product_img"
+                        data-v-1913df4e
+                        data-v-4309a8a2
+                      />
+                    </div>
+                  </div>
+                  <div className="info_box" data-v-34d98ac3>
+                    <div className="brand brand-text" data-v-34d98ac3>
+                      {product.brand}
+                    </div>
+                    <p className="name" data-v-34d98ac3>
+                      {product.name}
+                    </p>
+                    <div className="price" data-v-34d98ac3>
+                      <div className="amount lg">
+                        <em className="num">{product.price}</em>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
-};
-
-ProductList.propTypes = {
-  addToCart: PropTypes.func.isRequired,
 };
 
 export default ProductList;
