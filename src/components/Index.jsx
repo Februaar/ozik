@@ -50,7 +50,9 @@ const Index = () => {
       </div>
       <ProductList
         category="recommendation"
-        onProductClick={handleProductClick}
+        onProductClick={(productId, link) =>
+          handleProductClick(productId, link)
+        }
       />
       <div ref={categoryRefs.new}>
         <div className="product_title lg" data-v-a60468d2>
@@ -64,7 +66,12 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <ProductList category="new" onProductClick={handleProductClick} />
+      <ProductList
+        category="new"
+        onProductClick={(productId, link) =>
+          handleProductClick(productId, link)
+        }
+      />
       <div ref={categoryRefs.best}>
         <div className="product_title lg" data-v-a60468d2>
           <div data-v-a60468d2>
@@ -77,7 +84,12 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <ProductList category="best" onProductClick={handleProductClick} />
+      <ProductList
+        category="best"
+        onProductClick={(productId, link) =>
+          handleProductClick(productId, link)
+        }
+      />
       <div ref={categoryRefs.special}>
         <div className="product_title lg" data-v-a60468d2>
           <div data-v-a60468d2>
@@ -90,7 +102,12 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <ProductList category="special" onProductClick={handleProductClick} />
+      <ProductList
+        category="special"
+        onProductClick={(productId, link) =>
+          handleProductClick(productId, link)
+        }
+      />
     </div>
   );
 };
