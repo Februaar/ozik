@@ -5,7 +5,7 @@ const NewProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("src/data/new.json")
+    fetch("data/newData.json")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => {
