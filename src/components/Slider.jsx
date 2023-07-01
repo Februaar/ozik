@@ -38,7 +38,7 @@ const Slider = () => {
             </h2>
             <p className="my-2 text-white">{item.text}</p>
             <Link
-              to={`/${item.name}`}
+              to="recommendation/2"
               className="inline-flex items-center rounded-md btn btn-sm lg:btn-md mt-3 bg-black text-white py-2 px-3"
             >
               지금 구독하기
