@@ -32,7 +32,7 @@ const Category = ({ scrollToCategory }) => {
             data-v-5fe0be77
             className="li_tab"
             data-v-4b28b31a
-            onClick={() => scrollToCategory("new")}
+            onClick={() => scrollToCategory("newData")}
           >
             <Link
               data-v-09ef6665
