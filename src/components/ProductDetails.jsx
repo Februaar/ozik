@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import Error from "../view/Error.jsx";
+
 // 카테고리별 상품 상세페이지
 const ProductDetails = () => {
   const { category, productId } = useParams();
@@ -30,43 +32,84 @@ const ProductDetails = () => {
   }, [category, productId]);
 
   if (!product) {
-    return (
-      <div className="fixed top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-14 rounded-xl bg-black bg-opacity-40 text-white text-center flex items-center justify-center z-10">
-        {/* <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          className="bi bi-check-lg mr-[15px]"
-          viewBox="0 0 16 16"
-        >
-          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-        </svg> */}
-        <p>로딩 중...</p>
-      </div>
-    );
+    return <Error />;
   }
 
   return (
-    <div>
-      <div>
-        <div className="product_title lg" data-v-a60468d2>
-          <div data-v-a60468d2>
-            <div className="title" data-v-a60468d2>
-              {product.brand}
+    <>
+      <div className="content_container">
+        <div className="content">
+          <div className="column_bind">
+            <div className="column">
+              <img src={product.image} alt="{product.name}" />
             </div>
-            <div className="sub_title" data-v-a60468d2>
-              {product.name}
+            <div className="column">
+              <div className="column_box">
+                <div className="column_top">
+                  <div className="detail_main_title">
+                    <div className="main_title_box">
+                      <div className="brand">{product.brand}</div>
+                      <p className="title">{product.name}</p>
+                      <p className="description">{product.description}</p>
+                    </div>
+                  </div>
+                  <div className="product_info_wrap">
+                    <h3 className="detail_title">구독정보</h3>
+                    <div className="detail_product_wrap">
+                      <dl className="detail_product">
+                        <div className="detail_box">
+                          <dt className="product_title">2주일 간격</dt>
+                          <dd className="product_info">{product.price}</dd>
+                        </div>
+                        <div className="detail_box">
+                          <dt className="product_title">3주일 간격</dt>
+                          <dd className="product_info">{product.price}</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                  <div className="btn_wrap">
+                    <div className="division_btn_box">
+                      <a href="/error" className="btn_division wish_list">
+                        <strong className="title">고민해볼게요</strong>
+                      </a>
+                      <a href="/error" className="btn_division subscribe">
+                        <strong className="title">구독할래요</strong>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-56 h-32">{product.image}</div>
-        <div className="flex w-72 h-36 b-2 border-gray-600 mx-auto">
-          <div>{product.description}</div>
-          <div>{product.price}</div>
-        </div>
       </div>
-    </div>
+    </>
+    // <div>
+    //   <div>
+    //     <div className="product_title lg" data-v-a60468d2>
+    //       <div data-v-a60468d2>
+    //         <div className="title" data-v-a60468d2>
+    //           {product.brand}
+    //         </div>
+    //         <div className="sub_title" data-v-a60468d2>
+    //           {product.name}
+    //         </div>
+    //       </div>
+    //     </div>
+
+    //     <div>
+    //       <div className="bg-gray-200 rounded-md w-56 h-56 flex justify-center items-center">
+    //         <img src={product.image} alt={product.name} />
+    //       </div>
+    //     </div>
+
+    //     <div className="flex w-72 h-36 b-2 border-gray-600 mx-auto">
+    //       <div>{product.description}</div>
+    //       <div>{product.price}</div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 
