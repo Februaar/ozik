@@ -6,7 +6,7 @@ const ProductList = ({ category }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const dataUrl = `/src/data/${category}.json`;
+    const dataUrl = `/public/data/${category}.json`;
 
     fetch(dataUrl)
       .then((response) => response.json())
