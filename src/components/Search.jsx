@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import recommendations from "../data/recommendation.json";
-
+import recommendations from "/public/data/recommendation.json";
 const Search = (props) => {
   // const { category, data } = props;
   const [searchTerm, setSearchTerm] = useState("");
