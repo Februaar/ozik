@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "link": "/best/1",
+    "brand": "Evian",
+    "name": "에비앙 물",
+    "price": "2,400원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/images/evian.jpg"
+  },
+  {
+    "id": 2,
+    "link": "/best/2",
+    "brand": "Pepsi",
+    "name": "펩시 와일드 체리 제로 슈가",
+    "price": "7,900원",
+    "description": "구독하기 4에 대한 설명",
+    "image": "/images/pepsi.jpg"
+  },
+  {
+    "id": 3,
+    "link": "/best/3",
+    "brand": "Scott",
+    "name": "스콧 두루마리 휴지",
+    "price": "18,000원",
+    "description": "구독하기 3에 대한 설명",
+    "image": "/images/tissue.jpg"
+  },
+  {
+    "id": 4,
+    "link": "/best/4",
+    "brand": "Jongga",
+    "name": "종갓집 김치",
+    "price": "7,900원",
+    "description": "구독하기 4에 대한 설명",
+    "image": "/images/kimchi.jpg"
+  }
+]
