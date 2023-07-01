@@ -11,7 +11,7 @@ const Index = () => {
 
   const categoryRefs = {
     recommendation: useRef(null),
-    new: useRef(null),
+    newData: useRef(null),
     best: useRef(null),
     special: useRef(null),
   };
@@ -32,7 +32,7 @@ const Index = () => {
   };
 
   return (
-    <div>
+    <div className="main_container">
       <Category scrollToCategory={scrollToCategory} />
       <Slider />
       <div ref={categoryRefs.recommendation}>
@@ -53,7 +53,7 @@ const Index = () => {
           handleProductClick(productId, link)
         }
       />
-      <div ref={categoryRefs.new}>
+      <div ref={categoryRefs.newData}>
         <div className="product_title lg" data-v-a60468d2>
           <div data-v-a60468d2>
             <div className="title" data-v-a60468d2>
@@ -66,7 +66,7 @@ const Index = () => {
         </div>
       </div>
       <ProductList
-        category="new"
+        category="newData"
         onProductClick={(productId, link) =>
           handleProductClick(productId, link)
         }
