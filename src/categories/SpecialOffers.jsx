@@ -5,7 +5,7 @@ const SpecialOffers = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("src/data/special.json")
+    fetch("data/special.json")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => {
