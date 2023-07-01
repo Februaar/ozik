@@ -85,31 +85,6 @@ const ProductDetails = () => {
         </div>
       </div>
     </>
-    // <div>
-    //   <div>
-    //     <div className="product_title lg" data-v-a60468d2>
-    //       <div data-v-a60468d2>
-    //         <div className="title" data-v-a60468d2>
-    //           {product.brand}
-    //         </div>
-    //         <div className="sub_title" data-v-a60468d2>
-    //           {product.name}
-    //         </div>
-    //       </div>
-    //     </div>
-
-    //     <div>
-    //       <div className="bg-gray-200 rounded-md w-56 h-56 flex justify-center items-center">
-    //         <img src={product.image} alt={product.name} />
-    //       </div>
-    //     </div>
-
-    //     <div className="flex w-72 h-36 b-2 border-gray-600 mx-auto">
-    //       <div>{product.description}</div>
-    //       <div>{product.price}</div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
