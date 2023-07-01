@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProductList from "../components/ProductList";
 
 const Recommendations = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("src/data/recommendation.json")
+    fetch("recommendation.json")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => {
@@ -15,7 +16,7 @@ const Recommendations = () => {
 
   return (
     <>
-      <h2>추천 상품</h2>
+      <ProductList category="recommendation" />
       <ul>
         {products.map((product) => (
           <li key={product.id}></li>
