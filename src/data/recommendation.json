@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "link": "/recommendation/1",
+    "brand": "Starbucks",
+    "name": "스타벅스 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/src/assets/images/starbucks_capsule.jpg"
+  },
+  {
+    "id": 2,
+    "link": "/recommendation/2",
+    "brand": "Illy",
+    "name": "일리 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/src/assets/images/illy_capsule.jpg"
+  },
+  {
+    "id": 3,
+    "link": "/recommendation/3",
+    "brand": "Nespresso",
+    "name": "네스프레소 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/src/assets/images/nespresso_capsule.jpg"
+  },
+  {
+    "id": 4,
+    "link": "/recommendation/4",
+    "brand": "Nescafe",
+    "name": "네스카페 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/src/assets/images/nescafe_capsule.jpg"
+  },
+  {
+    "id": 5,
+    "link": "/recommendation/4",
+    "brand": "Nescafe",
+    "name": "네스프레소 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/src/assets/images/nescafe_capsule.jpg"
+  },
+  {
+    "id": 6,
+    "link": "/recommendation/4",
+    "brand": "Nescafe",
+    "name": "네스카페 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/src/assets/images/nescafe_capsule.jpg"
+  }
+]
