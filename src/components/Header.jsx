@@ -1,13 +1,20 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
+import SearchPage from "../components/SearchPage";
+
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
     window.location.reload();
+  };
+
+  const handleSearchClick = () => {
+    setSearchOpen(!searchOpen);
   };
 
   return (
@@ -106,8 +113,12 @@ const Header = () => {
                     </li>
                   </ul>
                 </nav>
-                <div className="search_btn_box flex">
-                  <Link to="#" aria-label="검색">
+                <div>
+                  <button
+                    onClick={handleSearchClick}
+                    aria-label="검색"
+                    className="focus:outline-none"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -118,13 +129,11 @@ const Header = () => {
                     >
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
-                  </Link>
+                  </button>
+                  {searchOpen && <SearchPage />}
                 </div>
               </div>
             </div>
-            {/* <button className="font-semibold text-blue-600 ml-5 w-25 h-15 text-xl">
-              OZIK
-            </button> */}
           </div>
         </div>
       </div>
