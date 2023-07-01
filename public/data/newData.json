@@ -6,7 +6,7 @@
     "name": "하리보 젤리",
     "price": "2,400원",
     "description": "구독하기 2에 대한 설명",
-    "image": "/src/assets/images/haribo.jpg"
+    "image": "/images/haribo.jpg"
   },
   {
     "id": 2,
@@ -15,16 +15,16 @@
     "name": "레이스 감자칩",
     "price": "18,000원",
     "description": "구독하기 3에 대한 설명",
-    "image": "/src/assets/images/lays.jpg"
+    "image": "/images/lays.jpg"
   },
   {
     "id": 3,
     "link": "/newData/3",
-    "brand": "NutriKraft",
-    "name": "뉴트리크라프트 포도당 캔디",
+    "brand": "RipVan",
+    "name": "립반 와플 쿠키",
     "price": "7,900원",
     "description": "구독하기 4에 대한 설명",
-    "image": "/src/assets/images/energy_candy.jpg"
+    "image": "/images/waffle.jpg"
   },
   {
     "id": 4,
@@ -33,6 +33,6 @@
     "name": "밀카 초콜렛",
     "price": "7,900원",
     "description": "구독하기 4에 대한 설명",
-    "image": "/src/assets/images/milka.jpg"
+    "image": "/images/milka.jpg"
   }
 ]
