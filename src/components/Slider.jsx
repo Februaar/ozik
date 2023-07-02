@@ -56,7 +56,7 @@ const Slider = () => {
               </svg>
             </Link>
           </div>
-          <img src={`/public/images/${item.name}.jpg`} alt={item.name} />
+          <img src={`/images/${item.name}.jpg`} alt={item.name} />
         </div>
       ))}
     </Carousel>
