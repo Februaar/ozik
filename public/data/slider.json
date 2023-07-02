@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "link": "/slider/1",
+    "type": "coffee",
+    "name": "illy 커피",
+    "text": "이제 집에서도 즐기세요",
+    "image": "/images/coffee.jpg"
+  },
+  {
+    "id": 2,
+    "link": "/slider/2",
+    "type": "snack",
+    "name": "사무실 간식 꾸러미",
+    "text": "매달 새로운 간식을 맛보세요",
+    "image": "/images/snack.jpg"
+  },
+  {
+    "id": 3,
+    "link": "/slider/3",
+    "type": "vegetable",
+    "name": "무농약 채소",
+    "text": "아이들과 신선한 채소를 함께해보세요",
+    "image": "/images/vegetable.jpg"
+  }
+]
