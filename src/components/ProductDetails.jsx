@@ -11,7 +11,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const dataPath = `/src/data/${category}.json`;
+        const dataPath = `/data/${category}.json`;
         const response = await fetch(dataPath);
         const data = await response.json();
 
