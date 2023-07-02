@@ -1,25 +1,21 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const Slider = () => {
-  const items = [
-    {
-      name: "coffee",
-      title: "illy 커피",
-      text: "이제 집에서도 즐기세요",
-    },
-    {
-      name: "snack",
-      title: "사무실 간식 꾸러미",
-      text: "매달 새로운 간식을 맛보세요",
-    },
-    {
-      name: "vegetable",
-      title: "무농약 채소",
-      text: "아이들에게는 신선한 채소를 소개해보세요",
-    },
-  ];
+const Slider = ({ category }) => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const dataUrl = `/public/data/slider.json`;
+
+    fetch(dataUrl)
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  }, [category]);
 
   return (
     <Carousel
@@ -30,13 +26,13 @@ const Slider = () => {
       infiniteLoop={true}
       className="carousel-container"
     >
-      {items.map((item, index) => (
-        <div key={item.name} className="carousel-slide">
+      {products.map((product) => (
+        <div key={product.name} className="carousel-slide">
           <div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 w-full lg:container px-4 md:px-10 text-left ">
             <h2 className="text-2xl lg:text-4xl font-bold text-white">
-              {item.title}
+              {product.type}
             </h2>
-            <p className="my-2 text-white">{item.text}</p>
+            <p className="my-2 text-white">{product.text}</p>
             <Link
               to="recommendation/2"
               className="inline-flex items-center rounded-md btn btn-sm lg:btn-md mt-3 bg-black text-white py-2 px-3"
@@ -56,7 +52,7 @@ const Slider = () => {
               </svg>
             </Link>
           </div>
-          <img src={`/public/images/${item.name}.jpg`} alt={item.name} />
+          <img src={product.image} alt={product.name} />
         </div>
       ))}
     </Carousel>
