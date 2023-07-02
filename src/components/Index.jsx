@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Slider from "../components/Slider";
 import Category from "../components/Category";
 import ProductList from "../components/ProductList";
+import ProductDetails from "../components/ProductDetails";
 
 // 메인페이지
 const Index = () => {
@@ -28,7 +29,7 @@ const Index = () => {
   };
 
   const handleProductClick = (productId, link) => {
-    navigate(link);
+    navigate("/public/data/${productId}");
   };
 
   return (
