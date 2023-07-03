@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "/src/contexts/AuthContext";
 
-import SearchPage from "../components/SearchPage";
+import SearchPage from "/src/components/SearchPage";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
