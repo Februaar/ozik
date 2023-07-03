@@ -122,7 +122,7 @@ const Login = () => {
       )}
       <ul className="flex justify-evenly text-[13px] mt-[10px]">
         <li>
-          <a href="/signup">이메일 가입</a>
+          <a onClick={() => navigate("/signup")}>이메일 가입</a>
         </li>
         <span className="w-[1px] h-[10px] m-[3px] mx-[6px] mt-[5px] bg-[#333]"></span>
         <li>이메일 찾기</li>
