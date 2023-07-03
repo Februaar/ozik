@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import recommendations from "/src/data/recommendation.json";
+import { Link } from "react-router-dom";
+import recommendations from "/public/data/recommendation.json";
 
 const Search = (props) => {
   // const { category, data } = props;
@@ -9,8 +9,6 @@ const Search = (props) => {
   const [autocompleteResults, setAutocompleteResults] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [recentSearches, setRecentSearches] = useState([]);
-
-  const navigate = useNavigate();
 
   const handleSearchChange = (event) => {
     const input = event.target.value.toLowerCase();
@@ -58,10 +56,6 @@ const Search = (props) => {
     const updatedRecentSearches = [...recentSearches];
     updatedRecentSearches.splice(index, 1);
     setRecentSearches(updatedRecentSearches);
-  };
-
-  const handleLoginButtonClick = () => {
-    navigate("/login");
   };
 
   return (
