@@ -193,20 +193,12 @@ const Search = (props) => {
                   data-v-23b03d29
                   className="search_card_tag_wrap search_card"
                 >
-                  <a
-                    data-v-23b03d29
-                    onClick={() => navigate("/login")}
-                    className="search_card_tag"
-                  >
+                  <Link to="/login" className="search_card_tag" data-v-23b03d29>
                     스타벅스 커피
-                  </a>
-                  <a
-                    data-v-23b03d29
-                    onClick={() => navigate("/login")}
-                    className="search_card_tag"
-                  >
+                  </Link>
+                  <Link to="/login" className="search_card_tag" data-v-23b03d29>
                     일리 커피
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
