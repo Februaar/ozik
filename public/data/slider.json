@@ -2,25 +2,31 @@
   {
     "id": 1,
     "link": "/slider/1",
+    "brand": "Illy",
     "type": "coffee",
-    "name": "illy 커피",
+    "name": "Illy 커피",
     "text": "이제 집에서도 즐기세요",
+    "description": "저렴한 가격에 구독해보세요",
     "image": "/images/coffee.jpg"
   },
   {
     "id": 2,
     "link": "/slider/2",
+    "brand": "Lays",
     "type": "snack",
     "name": "사무실 간식 꾸러미",
     "text": "매달 새로운 간식을 맛보세요",
+    "description": "저렴한 가격에 구독해보세요",
     "image": "/images/snack.jpg"
   },
   {
     "id": 3,
     "link": "/slider/3",
+    "brand": "자연마을",
     "type": "vegetable",
     "name": "무농약 채소",
     "text": "아이들과 신선한 채소를 함께해보세요",
+    "description": "저렴한 가격에 구독해보세요",
     "image": "/images/vegetable.jpg"
   }
 ]
