@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import recommendations from "/src/data/recommendation.json";
+import recommendations from "/public/data/recommendation.json";
 
 const Search = (props) => {
   // const { category, data } = props;
@@ -69,9 +69,9 @@ const Search = (props) => {
     event.preventDefault();
     const recommendation = recommendations.find(
       (rec) => rec.id === recommendationId
-    ); // 아이디에 해당하는 추천 검색어를 찾음
+    );
     if (recommendation) {
-      navigate.push(`/recommendation/${recommendationId}`);
+      navigate(`/recommendation/${recommendationId}`);
     }
   };
 
@@ -208,20 +208,34 @@ const Search = (props) => {
                   data-v-23b03d29
                   className="search_card_tag_wrap search_card"
                 >
+                  {/* <Link
+                    to="/recommendation/1"
+                    className="search_card_tag"
+                    data-v-23b03d29
+                  >
+                    스타벅스 커피
+                  </Link>
+                  <Link
+                    to="/recommendation/2"
+                    className="search_card_tag"
+                    data-v-23b03d29
+                  >
+                    일리 커피
+                  </Link> */}
                   <a
                     data-v-23b03d29
-                    onClick={() => navigate("/signup")}
                     className="search_card_tag"
-                    // href="/recommendation/1"
+                    href="/recommendation/1"
+                    // onClick={() => navigate("/signup")}
                     // onClick={(e) => handleRecommendationClick(e, 1)}
                   >
                     스타벅스 커피
                   </a>
                   <a
                     data-v-23b03d29
-                    onClick={() => navigate("/signup")}
                     className="search_card_tag"
-                    // href="/recommendation/2"
+                    href="/recommendation/2"
+                    // onClick={() => navigate("/signup")}
                     // onClick={(e) => handleRecommendationClick(e, 2)}
                   >
                     일리 커피
