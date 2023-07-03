@@ -27,14 +27,14 @@ const Slider = ({ category }) => {
       className="carousel-container"
     >
       {products.map((product) => (
-        <div key={product.name} className="carousel-slide">
+        <div key={product.type} className="carousel-slide">
           <div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 w-full lg:container px-4 md:px-10 text-left ">
             <h2 className="text-2xl lg:text-4xl font-bold text-white">
-              {product.type}
+              {product.name}
             </h2>
             <p className="my-2 text-white">{product.text}</p>
             <Link
-              to="recommendation/2"
+              to={product.link}
               className="inline-flex items-center rounded-md btn btn-sm lg:btn-md mt-3 bg-black text-white py-2 px-3"
             >
               지금 구독하기
