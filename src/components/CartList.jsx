@@ -10,7 +10,7 @@ const ProductList = ({ addToCart }) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("/public/data/products.json");
+      const response = await fetch("/data/products.json");
       const data = await response.json();
       setProducts(data);
     } catch (error) {
