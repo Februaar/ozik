@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import Error from "../view/Error.jsx";
 
@@ -7,6 +7,8 @@ import Error from "../view/Error.jsx";
 const ProductDetails = () => {
   const { category, productId } = useParams();
   const [product, setProduct] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -70,10 +72,16 @@ const ProductDetails = () => {
                   </div>
                   <div className="btn_wrap">
                     <div className="division_btn_box">
-                      <a href="/login" className="btn_division wish_list">
+                      <a
+                        onClick={() => navigate("/login")}
+                        className="btn_division wish_list"
+                      >
                         <strong className="title">고민해볼게요</strong>
                       </a>
-                      <a href="/login" className="btn_division subscribe">
+                      <a
+                        onClick={() => navigate("/login")}
+                        className="btn_division subscribe"
+                      >
                         <strong className="title">구독할래요</strong>
                       </a>
                     </div>
