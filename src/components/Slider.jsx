@@ -7,7 +7,7 @@ const Slider = ({ category }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const dataUrl = `/public/data/slider.json`;
+    const dataUrl = "public/data/slider.json";
 
     fetch(dataUrl)
       .then((response) => response.json())
