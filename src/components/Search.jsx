@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import recommendations from "/public/data/recommendation.json";
+import recommendations from "/src/data/recommendation.json";
 
 const Search = (props) => {
   // const { category, data } = props;
