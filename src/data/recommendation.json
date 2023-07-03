@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "link": "/recommendation/1",
+    "brand": "Starbucks",
+    "name": "스타벅스 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/images/starbucks_capsule.jpg"
+  },
+  {
+    "id": 2,
+    "link": "/recommendation/2",
+    "brand": "Illy",
+    "name": "일리 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/images/illy_capsule.jpg"
+  },
+  {
+    "id": 3,
+    "link": "/recommendation/3",
+    "brand": "Nespresso",
+    "name": "네스프레소 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/images/nespresso_capsule.jpg"
+  },
+  {
+    "id": 4,
+    "link": "/recommendation/4",
+    "brand": "Nescafe",
+    "name": "네스카페 커피 캡슐",
+    "price": "10,000원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/images/nescafe_capsule.jpg"
+  },
+  {
+    "id": 5,
+    "link": "/special/5",
+    "brand": "Haribo",
+    "name": "하리보 젤리",
+    "price": "2,400원",
+    "description": "구독하기 2에 대한 설명",
+    "image": "/images/haribo.jpg"
+  },
+  {
+    "id": 6,
+    "link": "/special/6",
+    "brand": "Milka",
+    "name": "밀카 초콜렛",
+    "price": "7,900원",
+    "description": "구독하기 4에 대한 설명",
+    "image": "/images/milka.jpg"
+  },
+  {
+    "id": 7,
+    "link": "/special/7",
+    "brand": "Lays",
+    "name": "레이스 감자칩",
+    "price": "7,900원",
+    "description": "구독하기 4에 대한 설명",
+    "image": "/images/lays.jpg"
+  },
+  {
+    "id": 8,
+    "link": "/special/8",
+    "brand": "Pepsi",
+    "name": "펩시 와일드 체리 제로 슈가",
+    "price": "7,900원",
+    "description": "구독하기 4에 대한 설명",
+    "image": "/images/pepsi.jpg"
+  }
+]
