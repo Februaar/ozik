@@ -5,7 +5,7 @@
     "brand": "Haribo",
     "name": "하리보 젤리",
     "price": "2,400원",
-    "description": "구독하기 2에 대한 설명",
+    "description": "저렴한 가격에 구독해보세요",
     "image": "/images/haribo.jpg"
   },
   {
@@ -14,7 +14,7 @@
     "brand": "Lays",
     "name": "레이스 감자칩",
     "price": "18,000원",
-    "description": "구독하기 3에 대한 설명",
+    "description": "저렴한 가격에 구독해보세요",
     "image": "/images/lays.jpg"
   },
   {
@@ -23,7 +23,7 @@
     "brand": "RipVan",
     "name": "립반 와플 쿠키",
     "price": "7,900원",
-    "description": "구독하기 4에 대한 설명",
+    "description": "저렴한 가격에 구독해보세요",
     "image": "/images/waffle.jpg"
   },
   {
@@ -32,7 +32,7 @@
     "brand": "Milka",
     "name": "밀카 초콜렛",
     "price": "7,900원",
-    "description": "구독하기 4에 대한 설명",
+    "description": "저렴한 가격에 구독해보세요",
     "image": "/images/milka.jpg"
   }
 ]
