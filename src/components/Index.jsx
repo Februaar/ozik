@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Slider from "/src/components/Slider";
-import Category from "/src/components/Category";
-import ProductList from "/src/components/ProductList";
+import Slider from "../components/Slider";
+import Category from "../components/Category";
+import ProductList from "../components/ProductList";
 // import ProductDetails from "../components/ProductDetails";
 
 // 메인페이지
