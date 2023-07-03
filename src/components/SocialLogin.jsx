@@ -16,7 +16,7 @@ const SocialLogin = () => {
   };
 
   const navigateToMainPage = () => {
-    navigate("/"); // 메인 페이지의 원하는 URL로 대체하세요
+    navigate("/");
   };
 
   return (
