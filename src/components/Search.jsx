@@ -10,7 +10,7 @@ const Search = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [recentSearches, setRecentSearches] = useState([]);
 
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const handleSearchChange = (event) => {
     const input = event.target.value.toLowerCase();
@@ -195,14 +195,14 @@ const Search = (props) => {
                 >
                   <a
                     data-v-23b03d29
-                    onClick={() => navigate("/recommendation/1")}
+                    onClick={() => navigate("/login")}
                     className="search_card_tag"
                   >
                     스타벅스 커피
                   </a>
                   <a
                     data-v-23b03d29
-                    onClick={() => navigate("/recommendation")}
+                    onClick={() => navigate("/login")}
                     className="search_card_tag"
                   >
                     일리 커피
