@@ -70,10 +70,10 @@ const ProductDetails = () => {
                   </div>
                   <div className="btn_wrap">
                     <div className="division_btn_box">
-                      <a href="/error" className="btn_division wish_list">
+                      <a href="/login" className="btn_division wish_list">
                         <strong className="title">고민해볼게요</strong>
                       </a>
-                      <a href="/error" className="btn_division subscribe">
+                      <a href="/login" className="btn_division subscribe">
                         <strong className="title">구독할래요</strong>
                       </a>
                     </div>
