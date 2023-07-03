@@ -210,16 +210,18 @@ const Search = (props) => {
                 >
                   <a
                     data-v-23b03d29
-                    href="/recommendation/1"
+                    onClick={() => navigate("/signup")}
                     className="search_card_tag"
+                    // href="/recommendation/1"
                     // onClick={(e) => handleRecommendationClick(e, 1)}
                   >
                     스타벅스 커피
                   </a>
                   <a
                     data-v-23b03d29
-                    href="/recommendation/2"
+                    onClick={() => navigate("/signup")}
                     className="search_card_tag"
+                    // href="/recommendation/2"
                     // onClick={(e) => handleRecommendationClick(e, 2)}
                   >
                     일리 커피
