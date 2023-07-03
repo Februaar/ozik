@@ -67,7 +67,12 @@ const Search = (props) => {
 
   const handleRecommendationClick = (event, recommendationId) => {
     event.preventDefault();
-    navigate.push(`/recommendation/${recommendationId}`);
+    const recommendation = recommendations.find(
+      (rec) => rec.id === recommendationId
+    ); // 아이디에 해당하는 추천 검색어를 찾음
+    if (recommendation) {
+      navigate.push(`/recommendation/${recommendationId}`);
+    }
   };
 
   return (
@@ -207,7 +212,7 @@ const Search = (props) => {
                     data-v-23b03d29
                     href="/recommendation/1"
                     className="search_card_tag"
-                    onClick={(e) => handleRecommendationClick(e, 1)}
+                    // onClick={(e) => handleRecommendationClick(e, 1)}
                   >
                     스타벅스 커피
                   </a>
@@ -215,7 +220,7 @@ const Search = (props) => {
                     data-v-23b03d29
                     href="/recommendation/2"
                     className="search_card_tag"
-                    onClick={(e) => handleRecommendationClick(e, 2)}
+                    // onClick={(e) => handleRecommendationClick(e, 2)}
                   >
                     일리 커피
                   </a>
