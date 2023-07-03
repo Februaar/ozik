@@ -50,7 +50,6 @@ const Search = (props) => {
   useEffect(() => {
     performSearch(searchTerm);
   }, []);
-  q;
 
   const handleRecentSearchDelete = (index) => {
     const updatedRecentSearches = [...recentSearches];
