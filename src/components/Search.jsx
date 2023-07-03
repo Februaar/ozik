@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import recommendations from "/public/data/recommendation.json";
 
 const Search = (props) => {
@@ -9,6 +9,8 @@ const Search = (props) => {
   const [autocompleteResults, setAutocompleteResults] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [recentSearches, setRecentSearches] = useState([]);
+
+  const navigation = useNavigate();
 
   const handleSearchChange = (event) => {
     const input = event.target.value.toLowerCase();
@@ -193,14 +195,14 @@ const Search = (props) => {
                 >
                   <a
                     data-v-23b03d29
-                    href="/recommendation/1"
+                    onClick={() => navigate("/recommendation/1")}
                     className="search_card_tag"
                   >
                     스타벅스 커피
                   </a>
                   <a
                     data-v-23b03d29
-                    href="/recommendation/2"
+                    onClick={() => navigate("/recommendation")}
                     className="search_card_tag"
                   >
                     일리 커피
